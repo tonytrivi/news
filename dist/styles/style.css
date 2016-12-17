@@ -4,3 +4,30 @@ body {
     min-height: 100%;
     padding-bottom: 200px;
 }
+
+.header-shim {
+  background-color: #d8d8d8;
+  height: 2px;
+}
+
+.header-main {
+  background-color: #f2f2f2;
+  color: #383838;
+}
+
+.header-content-container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-family:'segoe ui';
+  text-transform: uppercase;
+  font-stretch: expanded;
+  font-size: 3em;
+  color:#424242;
+  display:block;
+  width:500px;
+  height: 100%;
+  margin: 0 auto;
+}
