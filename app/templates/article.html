@@ -1,3 +1,15 @@
 <section>
-    <h1>{{ article.name }}</h1>
+    <h1>{{ article.desc }}</h1>
+    <div ng-repeat="item in article.articles.articleList track by $index">
+         <div>
+             <p>
+                 <span>{{ item.title }}</span>
+                 <br/>
+                 <span>{{ item.summary }}</span>
+                 <br/>
+                 <span>{{ item.writer }}</span>
+                 <br/>
+             </p>
+         </div>
+     </div>
 </section>

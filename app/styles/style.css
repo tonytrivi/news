@@ -21,13 +21,13 @@ body {
 }
 
 .header-title {
-  font-family:'segoe ui';
+  font-family: 'Playfair Display', serif;
   text-transform: uppercase;
   font-stretch: expanded;
   font-size: 3em;
   color:#424242;
   display:block;
-  width:500px;
+  width:80%;
   height: 100%;
   margin: 0 auto;
 }
