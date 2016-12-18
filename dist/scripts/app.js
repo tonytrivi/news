@@ -9,6 +9,7 @@
         $stateProvider
           .state('article', {
             url: '/',
+            controller: 'ArticleCtrl as article',
             templateUrl: '/templates/article.html'
           })
           .state('summary', {
