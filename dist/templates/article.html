@@ -1,15 +1,18 @@
 <section>
     <h1>{{ article.desc }}</h1>
-    <div ng-repeat="item in article.articles.articleList track by $index">
-         <div>
-             <p>
-                 <span>{{ item.title }}</span>
-                 <br/>
-                 <span>{{ item.summary }}</span>
-                 <br/>
-                 <span>{{ item.writer }}</span>
-                 <br/>
-             </p>
-         </div>
+    <div ng-repeat="articleBatch in article.articles.batch track by $index" class="article-date-container">
+            <p>{{ articleBatch.date }}</p>
+            <div ng-repeat="story in articleBatch.articleList track by $index" class="article-container">
+              <div class="article-content-container">
+                <p>
+                    <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
+                    <br/>
+                    <span>{{ story.summary }}</span>
+                    <br/>
+                    <span>{{ story.writer }}</span>
+                    <br/>
+                </p>
+              </div>
+            </div>
      </div>
 </section>
