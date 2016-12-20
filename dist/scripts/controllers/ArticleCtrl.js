@@ -1,6 +1,5 @@
 (function() {
     function ArticleCtrl() {
-      this.desc = "Article Page";
       this.articles = {
         description: "article collection",
         batch: [{
