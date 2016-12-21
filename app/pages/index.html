@@ -27,6 +27,18 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDOwaiOKq9q-SH-VJ6nK0ZFVTT2kxnPlxM",
+        authDomain: "statecraft-dcbc6.firebaseapp.com",
+        databaseURL: "https://statecraft-dcbc6.firebaseio.com",
+        storageBucket: "statecraft-dcbc6.appspot.com",
+        messagingSenderId: "5208094240"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/ArticleManager.js"></script>
     <script src="/scripts/controllers/ArticleCtrl.js"></script>
