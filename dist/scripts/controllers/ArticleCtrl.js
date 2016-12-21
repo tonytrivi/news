@@ -1,5 +1,6 @@
 (function() {
-    function ArticleCtrl() {
+    function ArticleCtrl(ArticleManager) {
+      this.article_test = ArticleManager.getArticles();
       this.articles = {
         description: "article collection",
         batch: [{
@@ -25,5 +26,5 @@
 
     angular
         .module('news')
-        .controller('ArticleCtrl', ArticleCtrl);
+        .controller('ArticleCtrl', ['ArticleManager', ArticleCtrl]);
 })();
