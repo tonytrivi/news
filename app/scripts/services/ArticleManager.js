@@ -1,22 +1,30 @@
 (function() {
      function ArticleManager() {
-         var ArticleManager = {};
+         //var dbRef = firebase.database().ref();
 
          /**
-         * @desc article list
-         * @type Object
+         * @desc Array of dates with their articles.
+         * @type {Object}
          */
-         ArticleManager.articleList = null;
+         //var dates = $firebaseArray(dbRef);
 
-         /**
-         * @desc returns articles
-         * @type object
-         */
-         ArticleManager.getArticles = function() {
-             return 'here are the current articles';
+         return {
+           //all: dates,
+           addArticle: function (title, url) {
+               console.log('we are in addArticle on the ArticleManager');
+               //TODO: add a new date
+          //     todaysDate = new Date();
+          //     var newDate = {
+          //       "title": todaysDate,
+          //       "articles": []
+          //     };
+          //     var newArticle = { "title": title,
+          //                        "url": url };
+          //     newDate.articles.push(newArticle);
+
+          //     dates.$add(newDate);
+           }
          };
-
-        return ArticleManager;
 }
 
      angular

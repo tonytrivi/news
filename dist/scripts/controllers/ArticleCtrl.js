@@ -1,6 +1,6 @@
 (function() {
     function ArticleCtrl(ArticleManager) {
-      this.article_test = ArticleManager.getArticles();
+
       this.articles = {
         description: "article collection",
         batch: [{
@@ -22,7 +22,21 @@
             }]
         }]
       };
-    }
+
+      /**
+      * @function addArticle
+      * @desc Adds an article to a specific date.
+      */
+      this.addArticle = function () {
+          //if(this.description.length > 0) {
+          //   Tasks.addTask(this.description);
+          //   this.description = "";
+          //}
+          console.log('you called addArticle()');
+          ArticleManager.addArticle('title','url');
+      };
+
+  }  //function ArticleCtrl
 
     angular
         .module('news')
