@@ -18,6 +18,6 @@
           });
     }
     angular
-        .module('news', ['ui.router'])
+        .module('news', ['ui.router','firebase'])
         .config(config);
 })();

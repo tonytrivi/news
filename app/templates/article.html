@@ -1,14 +1,13 @@
 <section>
-    <form ng-submit="landing.addTask()">
-      <label>Title: </label><input id="txtArticleTitle" type="text" />
-      <label>URL: </label><input id="txtArticleUrl" type="text" placeholder="http://www.amazon.com" />
-      <label>Writer: </label><input id="txtArticleWriterName" type="text" />
-      <select name="publications">
+    <form ng-submit="article.addArticle()">
+      <label>Title: </label><input ng-model="article.title" type="text" />
+      <label>URL: </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
+      <label>Writer: </label><input ng-model="article.writer" type="text" />
+      <select name="publications" ng-model="article.publication">
         <option value="L.A. Times">L.A. Times</option>
         <option value="New York Times">New York Times</option>
         <option value="Wall Street Journal">Wall Street Journal</option>
       </select>
-      <input type="date" name="articleDate">
       <button type="button" ng-click="article.addArticle()">
           add task
       </button>

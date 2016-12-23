@@ -1,6 +1,6 @@
 (function() {
      function ArticleManager() {
-         //var dbRef = firebase.database().ref();
+         //var dbRef = firebase.database.ref();
 
          /**
          * @desc Array of dates with their articles.
@@ -10,19 +10,16 @@
 
          return {
            //all: dates,
-           addArticle: function (title, url) {
+           addArticle: function (article) {
                console.log('we are in addArticle on the ArticleManager');
-               //TODO: add a new date
-          //     todaysDate = new Date();
-          //     var newDate = {
-          //       "title": todaysDate,
-          //       "articles": []
-          //     };
-          //     var newArticle = { "title": title,
-          //                        "url": url };
-          //     newDate.articles.push(newArticle);
 
-          //     dates.$add(newDate);
+               //add a new article
+            //
+            //     var newArticle = { "title": title,
+            //                        "url": url };
+            //     newDate.articles.push(newArticle);
+
+            //     dates.$add(newDate);
            }
          };
 }
