@@ -46,7 +46,6 @@
               newArticle.writer = this.writer;
               newArticle.publication = this.publication;
 
-              console.log(newArticle);
               ArticleManager.addArticle(newArticle);
             }
         };

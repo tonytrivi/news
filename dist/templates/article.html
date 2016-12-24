@@ -15,7 +15,7 @@
     </div>
     <div>{{ article.article_test }}</div>
     <div ng-repeat="articleBatch in article.articles.batch track by $index" class="article-date-container">
-            <p>{{ articleBatch.date }}</p>
+            <p>{{ articleBatch.date.toString() }}</p>
             <div ng-repeat="story in articleBatch.articleList track by $index" class="article-container">
               <div class="article-content-container">
                 <p>

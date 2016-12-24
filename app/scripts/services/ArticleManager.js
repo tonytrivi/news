@@ -1,30 +1,34 @@
 (function() {
-     function ArticleManager() {
-         //var dbRef = firebase.database.ref();
+     function ArticleManager($firebaseArray) {
+         const firebaseRefObject = firebase.database().ref().child('dates');
 
          /**
          * @desc Array of dates with their articles.
          * @type {Object}
          */
-         //var dates = $firebaseArray(dbRef);
+         var dbDatesCollection = $firebaseArray(firebaseRefObject);
 
          return {
-           //all: dates,
+           all: dbDatesCollection,
            addArticle: function (article) {
                console.log('we are in addArticle on the ArticleManager');
 
-               //add a new article
-            //
-            //     var newArticle = { "title": title,
-            //                        "url": url };
-            //     newDate.articles.push(newArticle);
+               theDate = new Date();
+               var dateWithArticles = {
+                 dateAdded: theDate.toISOString(),
+                 articleList: []
+               };
 
-            //     dates.$add(newDate);
+
+               dateWithArticles.articleList.push(article);
+               console.log(dateWithArticles);
+
+               dbDatesCollection.$add(dateWithArticles);
            }
          };
-}
+    }
 
      angular
          .module('news')
-         .factory('ArticleManager', ArticleManager);
+         .factory('ArticleManager', ['$firebaseArray',ArticleManager]);
 })();
