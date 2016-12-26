@@ -4,6 +4,7 @@
         this.allArticleCollections = ArticleManager.all;
         this.title;
         this.url;
+        this.summary;
         this.writer;
         this.publication;
 
@@ -17,14 +18,13 @@
               newArticle.title = this.title;
               //TODO: validate that it's a URL
               newArticle.url = this.url;
-              newArticle.summary = '';
+              newArticle.summary = this.summary;
               newArticle.writer = this.writer;
               newArticle.publication = this.publication;
 
               articleCollection.articleList.push(newArticle);
               this.allArticleCollections[key] = articleCollection;
 
-              //console.log(this.allArticleCollections[key]);
               this.allArticleCollections.$save(key);
             }
         };

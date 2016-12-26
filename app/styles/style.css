@@ -43,3 +43,31 @@ body {
   padding-bottom: 5px;
   padding-left: 8px;
 }
+
+.article-collection-date {
+  font-family: 'Playfair Display', serif;
+  font-stretch: expanded;
+  font-size: 1.4em;
+  color:#424242;
+}
+
+.article-title {
+  font-family: 'Playfair Display', serif;
+  font-stretch: expanded;
+  font-size: 1.2em;
+}
+
+.article-text-summary {
+  font-family: 'Calibri', serif;
+  color: #606060;
+  font-size: 0.9em;
+}
+
+.article-text-writer {
+  font-family: 'Calibri', serif;
+  font-size: 1em;
+}
+
+.article-collection-shim {
+  height: 30px;
+}

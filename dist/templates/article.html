@@ -1,23 +1,23 @@
 <section>
     </div>
-    <div>{{ article.article_test }}</div>
     <div ng-repeat="(key, articleCollection) in article.allArticleCollections track by $index" class="article-date-container">
-            <span>{{ articleCollection.dateAdded | date:'short' }}</span>
+            <span class="article-collection-date">{{ articleCollection.dateAdded | date:'short' }}</span>
             <div ng-repeat="story in articleCollection.articleList | orderBy:'-dateAdded' track by $index"  class="article-container">
               <div class="article-content-container">
-                <p>
-                    <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
+                <span>
+                    <a class="article-title" href="{{ story.url }}" target="_blank">{{ story.title }}</a>
                     <br/>
-                    <span>{{ story.summary }}</span>
+                    <span class="article-text-summary">{{ story.summary }}</span>
                     <br/>
-                    <span>{{ story.writer }}</span>
+                    <span class="article-text-writer">{{ story.writer }}</span>
                     <br/>
-                </p>
+                </span>
               </div>
             </div>
             <form ng-submit="article.addArticle(key, articleCollection)">
               <label>Title: </label><input ng-model="article.title" type="text" />
               <label>URL: </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
+              <label>Summary: </label><input ng-model="article.summary" type="text" />
               <label>Writer: </label><input ng-model="article.writer" type="text" />
               <select name="publications" ng-model="article.publication">
                 <option value="L.A. Times">L.A. Times</option>
@@ -28,5 +28,6 @@
                   add article
               </button>
             </form>
+            <div class="article-collection-shim"></div>
      </div>
 </section>
