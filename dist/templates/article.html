@@ -1,7 +1,7 @@
 <section>
     </div>
     <div>{{ article.article_test }}</div>
-    <div ng-repeat="articleCollection in article.allArticles track by $index" class="article-date-container">
+    <div ng-repeat="(key, articleCollection) in article.allArticleCollections track by $index" class="article-date-container">
             <span>{{ articleCollection.dateAdded | date:'short' }}</span>
             <div ng-repeat="story in articleCollection.articleList | orderBy:'-dateAdded' track by $index"  class="article-container">
               <div class="article-content-container">
@@ -15,7 +15,7 @@
                 </p>
               </div>
             </div>
-            <form ng-submit="article.addArticle(articleCollection)">
+            <form ng-submit="article.addArticle(key, articleCollection)">
               <label>Title: </label><input ng-model="article.title" type="text" />
               <label>URL: </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
               <label>Writer: </label><input ng-model="article.writer" type="text" />
@@ -24,7 +24,7 @@
                 <option value="New York Times">New York Times</option>
                 <option value="Wall Street Journal">Wall Street Journal</option>
               </select>
-              <button type="button" ng-click="article.addArticle(articleCollection)">
+              <button type="button" ng-click="article.addArticle(key, articleCollection)">
                   add article
               </button>
             </form>
