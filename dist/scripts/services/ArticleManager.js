@@ -12,19 +12,17 @@
            all: dbDatesCollection,
            addArticle: function (article) {
                console.log('we are in addArticle on the ArticleManager');
-
+               dbDatesCollection[0].$add(article);
+           },
+           addArticleContainer: function () {
                theDate = new Date();
-               var dateWithArticles = {
-                 dateAdded: theDate.toISOString(),
-                 articleList: []
+               var articleContainer = {
+                 dateAdded: theDate.toISOString()
                };
 
-
-               dateWithArticles.articleList.push(article);
-               console.log(dateWithArticles);
-
-               dbDatesCollection.$add(dateWithArticles);
+               dbDatesCollection.$add(articleContainer);
            }
+
          };
     }
 

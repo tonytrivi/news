@@ -1,22 +1,9 @@
 <section>
-    <form ng-submit="article.addArticle()">
-      <label>Title: </label><input ng-model="article.title" type="text" />
-      <label>URL: </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
-      <label>Writer: </label><input ng-model="article.writer" type="text" />
-      <select name="publications" ng-model="article.publication">
-        <option value="L.A. Times">L.A. Times</option>
-        <option value="New York Times">New York Times</option>
-        <option value="Wall Street Journal">Wall Street Journal</option>
-      </select>
-      <button type="button" ng-click="article.addArticle()">
-          add task
-      </button>
-    </form>
     </div>
     <div>{{ article.article_test }}</div>
-    <div ng-repeat="articleBatch in article.articles.batch track by $index" class="article-date-container">
-            <p>{{ articleBatch.date.toString() }}</p>
-            <div ng-repeat="story in articleBatch.articleList track by $index" class="article-container">
+    <div ng-repeat="articleCollection in article.allArticles track by $index" class="article-date-container">
+            <span>{{ articleCollection.dateAdded | date:'short' }}</span>
+            <div ng-repeat="story in articleCollection.articleList | orderBy:'-dateAdded' track by $index"  class="article-container">
               <div class="article-content-container">
                 <p>
                     <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
@@ -28,5 +15,18 @@
                 </p>
               </div>
             </div>
+            <form ng-submit="article.addArticle(articleCollection)">
+              <label>Title: </label><input ng-model="article.title" type="text" />
+              <label>URL: </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
+              <label>Writer: </label><input ng-model="article.writer" type="text" />
+              <select name="publications" ng-model="article.publication">
+                <option value="L.A. Times">L.A. Times</option>
+                <option value="New York Times">New York Times</option>
+                <option value="Wall Street Journal">Wall Street Journal</option>
+              </select>
+              <button type="button" ng-click="article.addArticle(articleCollection)">
+                  add article
+              </button>
+            </form>
      </div>
 </section>
