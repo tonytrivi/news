@@ -2,6 +2,8 @@
     function ArticleCtrl(ArticleManager) {
         this.ArticleManager = ArticleManager;
         this.allArticleCollections = ArticleManager.all;
+        this.articleCollectionLimit = 2;  //I had track by $index
+
         this.title;
         this.url;
         this.summary;

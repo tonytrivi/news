@@ -1,8 +1,8 @@
 <section>
     </div>
-    <div ng-repeat="(key, articleCollection) in article.allArticleCollections track by $index" class="article-date-container">
+    <div ng-repeat="(key, articleCollection) in article.allArticleCollections | limitTo:article.articleCollectionLimit | orderBy:'-dateAdded'" class="article-date-container">
             <span class="article-collection-date">{{ articleCollection.dateAdded | date:'short' }}</span>
-            <div ng-repeat="story in articleCollection.articleList | orderBy:'-dateAdded' track by $index"  class="article-container">
+            <div ng-repeat="story in articleCollection.articleList track by $index"  class="article-container">
               <div class="article-content-container">
                 <span>
                     <a class="article-title" href="{{ story.url }}" target="_blank">{{ story.title }}</a>
@@ -14,7 +14,7 @@
                 </span>
               </div>
             </div>
-            <form ng-submit="article.addArticle(key, articleCollection)">
+            <form ng-submit="article.addArticle(key, articleCollection)" ng-show="{{ key == 0 }}">
               <label>Title: </label><input ng-model="article.title" type="text" />
               <label>URL: </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
               <label>Summary: </label><input ng-model="article.summary" type="text" />
