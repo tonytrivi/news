@@ -31,7 +31,7 @@ describe('App Tests', function() {
 
     afterEach(function() {
             firebaseApp.delete();
-        });
+    });
   });
 
 });

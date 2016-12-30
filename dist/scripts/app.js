@@ -7,14 +7,15 @@
         });
 
         $stateProvider
-          .state('article', {
+          .state('articles', {
             url: '/',
             controller: 'ArticleCtrl as article',
             templateUrl: '/templates/article.html'
           })
-          .state('summary', {
-              url: '/summary',
-              templateUrl: '/templates/summary.html'
+          .state('details', {
+            url: '/details',
+            controller: 'ArticleDetailCtrl as articledetail',
+            templateUrl: '/templates/articledetail.html'
           });
     }
     angular
