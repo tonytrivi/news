@@ -5,7 +5,8 @@
             <div ng-repeat="story in articleCollection.articleList track by $index"  class="article-container">
               <div class="article-content-container">
                 <span>
-                    <a class="article-title" href="{{ story.url }}" target="_blank">{{ story.title }}</a><span> {{ story.ID }}</span>
+                    <a class="article-title" href="{{ story.url }}" target="_blank">{{ story.title }}</a>
+                    <a class="article-details-link" href="http://localhost:3000/details/{{ story.ID }}" target="_blank">details...</a>
                     <br/>
                     <span class="article-text-summary">{{ story.summary }}</span>
                     <br/>

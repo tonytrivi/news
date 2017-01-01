@@ -57,6 +57,11 @@ body {
   font-size: 1.2em;
 }
 
+.article-details-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.6em;
+}
+
 .article-text-summary {
   font-family: 'Calibri', serif;
   color: #606060;
