@@ -14,9 +14,18 @@
                console.log('we are in addArticle on the ArticleManager');
                dbDatesCollection[0].$add(article);
            },
-           addArticleContainer: function () {
+           addArticleCollection: function () {
                theDate = new Date();
                var articleContainer = {
+                 ID: Date.now(),
+                 articleList: [{
+                   ID: Date.now(),
+                   title: "Congress Meets",
+                   url: "http://www.msn.com",
+                   summary: "Congress did some work.",
+                   writer: "Jane Doe",
+                   publication: "Wall Street Journal"
+                 }],
                  dateAdded: theDate.toISOString()
                };
 

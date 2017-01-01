@@ -16,9 +16,11 @@
         */
         this.addArticle = function (key, articleCollection) {
             if(this.title.length > 0) {
+              var dateId = Date.now();
               var newArticle = {};
+
+              newArticle.ID = this.createArticleID(this.title);
               newArticle.title = this.title;
-              //TODO: validate that it's a URL
               newArticle.url = this.url;
               newArticle.summary = this.summary;
               newArticle.writer = this.writer;
@@ -28,6 +30,26 @@
               this.allArticleCollections[key] = articleCollection;
 
               this.allArticleCollections.$save(key);
+            }
+        };
+
+        /**
+        * @function createArticleID
+        * @desc Creates a human-readable article ID.
+        */
+        this.createArticleID = function (title) {
+            if(this.title.length > 0) {
+              var wordsInTitle = title.split(" ");
+              var newArticleIdentifier = '';
+
+              for(i = 0; i < wordsInTitle.length; i++) {
+                newArticleIdentifier += wordsInTitle[i].toLowerCase() + '-';
+              }
+
+              //guard against article with the same name
+              newArticleIdentifier += new Date().getMilliseconds().toString();
+
+              return newArticleIdentifier;
             }
         };
 

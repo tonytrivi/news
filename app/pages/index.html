@@ -19,6 +19,9 @@
           <div class="header-shim"></div>
       </div>
     </header>
+    <div ng-controller="ArticleCollectionCtrl as articleCollection">
+      <div ng-include src="'/templates/articlecollection.html'"></div>
+    </div>
     <ui-view></ui-view>
     <div ng-controller="LoginCtrl">
       <div ng-include src="'/templates/login.html'"></div>
@@ -42,6 +45,7 @@
     <script src="/scripts/app.js"></script>
     <script src="/scripts/services/ArticleManager.js"></script>
     <script src="/scripts/controllers/ArticleCtrl.js"></script>
+    <script src="/scripts/controllers/ArticleCollectionCtrl.js"></script>
     <script src="/scripts/controllers/ArticleDetailCtrl.js"></script>
     <script src="/scripts/controllers/LoginCtrl.js"></script>
 </body>
