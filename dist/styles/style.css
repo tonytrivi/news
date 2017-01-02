@@ -5,6 +5,16 @@ body {
     padding-bottom: 200px;
 }
 
+input {
+  font-family: 'Calibri';
+}
+
+.credit {
+  font-family: 'Calibri', serif;
+  color: #606060;
+  font-size: 0.7em;
+}
+
 .header-shim {
   background-color: #ffa5c0;
   height: 2px;
@@ -39,9 +49,9 @@ body {
 .article-content-container {
   background-color: #d8d8d8;
   padding-top: 5px;
-  padding-right: 3px;
+  padding-right: 5px;
   padding-bottom: 5px;
-  padding-left: 8px;
+  padding-left: 5px;
 }
 
 .article-collection-date {
@@ -71,9 +81,9 @@ body {
 .summary-container {
   background-color: #fafafa;
   padding-top: 5px;
-  padding-right: 3px;
+  padding-right: 5px;
   padding-bottom: 5px;
-  padding-left: 8px;
+  padding-left: 5px;
 }
 
 .summary-text {
@@ -82,7 +92,7 @@ body {
   font-size: 0.9em;
 }
 
-.summary-likes {
+.summary-list-text {
   font-family: 'Playfair Display', serif;
   font-size: 0.7em;
   color: black;
@@ -90,7 +100,7 @@ body {
 
 .article-text-writer {
   font-family: 'Calibri', serif;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .article-collection-shim {
@@ -99,6 +109,11 @@ body {
 
 .img-like {
     cursor: pointer; cursor: hand;
+}
+
+.add-collection-button {
+  font-family: 'Calibri', serif;
+  font-size: 0.7em;
 }
 
 .summary-vote-button {
