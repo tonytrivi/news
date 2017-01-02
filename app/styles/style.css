@@ -68,6 +68,26 @@ body {
   font-size: 0.9em;
 }
 
+.summary-container {
+  background-color: #424242;
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+
+.summary-text {
+  font-family: 'Calibri', serif;
+  color: white;
+  font-size: 0.9em;
+}
+
+.summary-likes {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.7em;
+  color: white;
+}
+
 .article-text-writer {
   font-family: 'Calibri', serif;
   font-size: 1em;

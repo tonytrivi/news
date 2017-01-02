@@ -22,9 +22,12 @@
                    ID: Date.now(),
                    title: "Congress Meets",
                    url: "http://www.msn.com",
-                   summary: "Congress did some work.",
+                   summary: "the one-off summary.",
+                   summaryList: [{summary: "The leaders traveled.", likes: 2},
+                               {summary: "They legislated.", likes: 4}],
                    writer: "Jane Doe",
-                   publication: "Wall Street Journal"
+                   publication: "New York Times",
+                   likes: 3
                  }],
                  dateAdded: theDate.toISOString()
                };
