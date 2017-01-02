@@ -17,7 +17,16 @@
         */
         this.toggleSummaries = function() {
           this.openSummaries = !this.openSummaries;
-          console.log(this.openSummaries);
+        }
+
+
+        /**
+        * @function incrementSummaryLike
+        * @desc Increments the likes for a summary
+        */
+        this.incrementSummaryLike = function() {
+          //each summary object needs an ID
+          console.log("you clicked incrementSummaryLike");
         }
 
         /**

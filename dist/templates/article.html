@@ -8,10 +8,11 @@
                     <a class="article-details-link" href="http://localhost:3000/details/{{ story.ID }}" target="_blank">details...</a>
                     <br/>
                     <span class="article-text-summary">{{ story.summary }}</span>
-                    <button class="summary-vote-button" ng-click="article.toggleSummaries()">vote for summaries</button>
+                    <button class="summary-vote-button" ng-click="article.toggleSummaries()">view summaries</button>
                     <div ng-repeat="summary in story.summaryList track by $index"  class="summary-container" ng-show="article.openSummaries">
                       <span class="summary-text">{{ summary.text }}</span>
                         <img class="img-like" src="../assets/images/bloc-logo-white.png"
+                              ng-click="article.incrementSummaryLike()"
                               alt="edit"
                               height="15"
                               width="15" />
