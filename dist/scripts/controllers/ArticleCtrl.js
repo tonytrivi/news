@@ -9,6 +9,16 @@
         this.summary;
         this.writer;
         this.publication;
+        this.openSummaries = false;
+
+        /**
+        * @function toggleSummaries
+        * @desc Toggles the summary view.
+        */
+        this.toggleSummaries = function() {
+          this.openSummaries = !this.openSummaries;
+          console.log(this.openSummaries);
+        }
 
         /**
         * @function addArticle
