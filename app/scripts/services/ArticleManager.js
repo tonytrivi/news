@@ -8,6 +8,10 @@
          */
          var dbDatesCollection = $firebaseArray(firebaseRefObject);
 
+         /**
+         * @desc Generates pseudo-random integers
+         * @return integer
+         */
          var idGenerator = function() {
            var myDate = new Date();
            var year        = myDate.getYear().toString();
@@ -21,6 +25,7 @@
 
          return {
            all: dbDatesCollection,
+           idGenerator: idGenerator,
            addArticle: function (article) {
                console.log('we are in addArticle on the ArticleManager');
                dbDatesCollection[0].$add(article);

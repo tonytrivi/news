@@ -17,17 +17,31 @@
         */
         this.toggleSummaries = function() {
           this.openSummaries = !this.openSummaries;
-        }
+        };
 
+        /**
+        * @function idGenerator
+        * @desc Generates a random integer.
+        */
+        this.idGenerator = function() {
+          return this.ArticleManager.idGenerator();
+        };
 
         /**
         * @function incrementSummaryLike
         * @desc Increments the likes for a summary
         */
         this.incrementSummaryLike = function() {
-          //each summary object needs an ID
           console.log("you clicked incrementSummaryLike");
-        }
+        };
+
+        /**
+        * @function incrementArticleLike
+        * @desc Increments the likes for an article
+        */
+        this.incrementArticleLike = function() {
+          console.log("you clicked incrementArticleLike");
+        };
 
         /**
         * @function addArticle
@@ -35,15 +49,23 @@
         */
         this.addArticle = function (key, articleCollection) {
             if(this.title.length > 0) {
-              var dateId = Date.now();
               var newArticle = {};
 
               newArticle.ID = this.createArticleID(this.title);
               newArticle.title = this.title;
               newArticle.url = this.url;
               newArticle.summary = this.summary;
+              newArticle.summaryList = [{
+                            ID: this.idGenerator(),
+                            text: "The leaders traveled.",
+                            likes: 0},
+                           {
+                            ID: this.idGenerator(),
+                            text: "They legislated.",
+                            likes: 0}];
               newArticle.writer = this.writer;
               newArticle.publication = this.publication;
+              newArticle.likes = 0;
 
               articleCollection.articleList.push(newArticle);
               this.allArticleCollections[key] = articleCollection;

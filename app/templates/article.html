@@ -5,6 +5,10 @@
             <div ng-repeat="story in articleCollection.articleList track by $index"  class="article-container">
               <div class="article-content-container">
                     <a class="article-title" href="{{ story.url }}" target="_blank">{{ story.title }}</a><span class="article-text-writer">, by {{ story.writer }}</span>
+                    <button type="button" class="add-collection-button" ng-click="article.incrementArticleLike()">
+                        like
+                    </button>
+                    <span class="summary-list-text"> {{ story.likes }}</span>
                     <a ng-show="false" class="article-details-link" href="http://localhost:3000/details/{{ story.ID }}" target="_blank">details...</a>
                     <br/>
                     <span class="article-text-summary">{{ story.summary }}</span>
@@ -13,14 +17,14 @@
                       class="summary-container"
                       ng-show="article.openSummaries">
                       <span class="summary-list-text">{{ $index + 1 }}. {{ summary.text }}</span>
-                        <img ng-show="false" class="img-like" src="../assets/images/bloc-logo-white.png"
-                              ng-click="article.incrementSummaryLike()"
-                              alt="edit"
-                              height="10"
-                              width="15" />
-                        <button type="button" class="add-collection-button" ng-click="article.incrementSummaryLike()">
-                            like
-                        </button>
+                      <img ng-show="false" class="img-like" src="../assets/images/bloc-logo-white.png"
+                            ng-click="article.incrementSummaryLike()"
+                            alt="edit"
+                            height="10"
+                            width="15" />
+                      <button type="button" class="add-collection-button" ng-click="article.incrementSummaryLike()">
+                          like
+                      </button>
                       <span class="summary-list-text"> {{ summary.likes }}</span>
                     </div>
                     <br/>
