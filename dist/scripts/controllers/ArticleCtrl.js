@@ -31,8 +31,20 @@
         * @function incrementSummaryLike
         * @desc Increments the likes for a summary
         */
-        this.incrementSummaryLike = function() {
-          console.log("you clicked incrementSummaryLike");
+        this.incrementSummaryLike = function(summaryID, articleCollection) {
+          //find the summary and increment its likes
+          for (var key in articleCollection.articleList) {
+            var article = articleCollection.articleList[key];
+
+            for (var summaryKey in article.summaryList) {
+              var summary = article.summaryList[summaryKey];
+              if (summary.ID == summaryID) {
+                console.log("incrementing likes for: " + summaryID);
+                summary.likes++;
+                //TODO: save to db
+              }
+            }
+          }
         };
 
         /**
