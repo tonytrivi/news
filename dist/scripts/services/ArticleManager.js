@@ -57,7 +57,10 @@
 
             dbDatesCollection.$add(articleContainer);
 
-           }
+          },
+          updateArticleCollection: function (articleCollection) {
+              console.log('we are in updateArticleCollection on the ArticleManager');
+          },
 
          };
     }

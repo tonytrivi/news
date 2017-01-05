@@ -41,7 +41,10 @@
               if (summary.ID == summaryID) {
                 console.log("incrementing likes for: " + summaryID);
                 summary.likes++;
-                //TODO: save to db
+
+                this.allArticleCollections.$save(articleCollection);
+
+                //ArticleManager.updateArticleCollection(articleCollection);
               }
             }
           }
