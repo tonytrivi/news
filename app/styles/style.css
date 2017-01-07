@@ -47,7 +47,7 @@ input {
 }
 
 .article-content-container {
-  background-color: #d8d8d8;
+  background-color: #dae3e5;
   padding-top: 5px;
   padding-right: 5px;
   padding-bottom: 5px;
@@ -84,18 +84,19 @@ input {
   padding-right: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
+  margin: 2px;
 }
 
 .summary-text {
   font-family: 'Calibri', serif;
-  color: black;
+  color: #424242;
   font-size: 0.9em;
 }
 
 .summary-list-text {
   font-family: 'Playfair Display', serif;
   font-size: 0.8em;
-  color: black;
+  color: #424242;
 }
 
 .article-text-writer {

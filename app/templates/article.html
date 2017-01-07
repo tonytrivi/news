@@ -5,8 +5,11 @@
             <div ng-repeat="story in articleCollection.articleList | orderBy:'-likes' track by $index"  class="article-container">
               <div class="article-content-container">
                     <a class="article-title" href="{{ story.url }}" target="_blank">{{ story.title }}</a><span class="article-text-writer">, by {{ story.writer }}</span>
-                    <button type="button" class="add-collection-button" ng-click="article.incrementArticleLike()">
-                        like
+                    <button type="button" class="add-collection-button">
+                      <img class="img-like" src="../assets/images/thumbs-up-gray.svg"
+                            alt="edit"
+                            height="10"
+                            width="15" />
                     </button>
                     <span class="summary-list-text"> {{ story.likes }}</span>
                     <a ng-show="false" class="article-details-link" href="http://localhost:3000/details/{{ story.ID }}" target="_blank">details...</a>
@@ -17,11 +20,12 @@
                       class="summary-container"
                       ng-show="article.openSummaries">
                       <span class="summary-list-text">{{ $index + 1 }}. {{ summary.text }}</span>
-                      <img class="img-like" src="../assets/images/likeblack.svg"
-                            ng-click="article.incrementSummaryLike(summary.ID, articleCollection)"
-                            alt="edit"
-                            height="10"
-                            width="15" />
+                      <button type="button" class="add-collection-button" ng-click="article.incrementSummaryLike(summary.ID, articleCollection)">
+                        <img class="img-like" src="../assets/images/thumbs-up-gray.svg"
+                              alt="edit"
+                              height="10"
+                              width="15" />
+                      </button>
                 <!--      <button type="button" class="add-collection-button" ng-click="article.incrementSummaryLike()">
                           like
                       </button>  -->
