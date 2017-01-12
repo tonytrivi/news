@@ -4,6 +4,9 @@
             <input id="txtPassword" type="password" placeholder="password" ng-model="login.password" />
             <button id="btnLogin" class="add-collection-button" ng-click="login.logIn()">log in</button>
             <button id="btnLogout" class="add-collection-button">log out</button>
-            <h1>logged in: {{ login.Authentication.isLoggedIn }}</h1>
+            <h1>logged in: {{ login.loggedIn }}</h1>
+            <h1>logged in: {{ login.email }}</h1>
+            <button id="btnLoginStatus" class="add-collection-button" ng-click="login.getLoginStatus()">logged in?</button>
+
      </div>
 </section>

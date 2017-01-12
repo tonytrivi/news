@@ -4,7 +4,7 @@
        * @var loggedIn
        * @desc Indicates if the user has logged in.
        */
-       var loggedIn = false;
+       this.loggedIn;
 
        /**
        * @var admin
@@ -12,20 +12,8 @@
        */
        var admin = false;
 
-
-       firebase.auth().onAuthStateChanged(function(user) {
-         if (user) {
-           loggedIn = true;
-           admin = true;
-         } else {
-           loggedIn = false;
-           admin = false;
-         }
-       });
-
        return {
-         isLoggedIn: loggedIn,
-         isAdmin: admin,
+         isLoggedIn: this.loggedIn,
          logIn: function (email, password) {
            var authObj = firebase.auth();
            console.log('I am about to log the authObj');
