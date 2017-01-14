@@ -4,27 +4,13 @@
        * @var loggedIn
        * @desc Indicates if the user has logged in.
        */
-       Authentication.loggedIn = false;
+       Authentication.loggedIn;
 
        /**
        * @var admin
        * @desc Indicates if the user has logged in.
        */
-       Authentication.admin = false;
-
-       /**
-       * @function onAuthStateChanged
-       * @desc Determines if user is logged in
-       */
-       firebase.auth().onAuthStateChanged(function(user) {
-         if (user) {
-           Authentication.loggedIn = true;
-           console.log('loggedIn changed to true: ' + Authentication.loggedIn);
-         } else {
-           Authentication.loggedIn = false;
-           console.log('loggedIn changed to false: ' + Authentication.loggedIn);
-         }
-       });
+       Authentication.admin;
 
        /**
        * @function logIn
@@ -32,8 +18,6 @@
        */
        Authentication.logIn = function (email, password) {
          var authObj = firebase.auth();
-         console.log('I am about to log the authObj');
-         console.log(authObj);
 
          //sign up
          //authObj.createUserWithEmailAndPassword(this.email, this.password).catch(function(error) {
@@ -45,16 +29,37 @@
            console.log(error.code);
            console.log(error.message);
          });
-      }
+      };
 
-       return Authentication;
+      /**
+      * @function logOut
+      * @desc Logs a user out
+      */
+      Authentication.logOut = function () {
+        var authObj = firebase.auth();
 
+        authObj.signOut();
+     };
 
+     /**
+     * @function onAuthStateChanged
+     * @desc Determines if user is logged in
+     */
+     firebase.auth().onAuthStateChanged(function(user) {
+       //the user is null if not logged in
+       if (user) {
+         Authentication.loggedIn = true;
 
+         console.log('loggedIn changed to: ' + Authentication.loggedIn);
 
+       } else {
+         Authentication.loggedIn = false;
 
+         console.log('loggedIn changed to: ' + Authentication.loggedIn);
+       }
+     });
 
-
+     return Authentication;
     }
 
      angular

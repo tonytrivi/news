@@ -3,7 +3,7 @@
             <input id="txtEmail" type="email" placeholder="email@emailaddress.com" ng-model="login.email" />
             <input id="txtPassword" type="password" placeholder="password" ng-model="login.password" />
             <button id="btnLogin" class="add-collection-button" ng-click="login.logIn()">log in</button>
-            <button id="btnLogout" class="add-collection-button">log out</button>
+            <button id="btnLogout" class="add-collection-button" ng-click="login.logOut()">log out</button>
             <h1>logged in: {{ login.Authentication.loggedIn }}</h1>
             <button id="btnLoginStatus" class="add-collection-button" ng-click="login.getLoginStatus()">logged in?</button>
 
