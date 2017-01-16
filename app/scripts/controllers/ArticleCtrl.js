@@ -1,8 +1,10 @@
 (function() {
-    function ArticleCtrl(ArticleManager) {
+    function ArticleCtrl(ArticleManager, Authentication) {
         this.ArticleManager = ArticleManager;
+        this.Authentication = Authentication;
         this.allArticleCollections = ArticleManager.all;
         this.articleCollectionLimit = 2;  //I had track by $index
+        this.firebaseUser;
 
         this.title;
         this.url;
@@ -10,6 +12,7 @@
         this.writer;
         this.publication;
         this.openSummaries = false;
+        var that = this;
 
         /**
         * @function toggleSummaries
@@ -109,9 +112,26 @@
             }
         };
 
+        /**
+        * @function $onAuthStateChanged
+        * @desc track if the user is logged in
+        */
+        this.Authentication.$onAuthStateChanged(function(firebaseUser) {
+          that.firebaseUser = firebaseUser;
+          console.log('firebaseUser: ');
+          if(firebaseUser) {
+            console.log('in ArticleCollection firebaseUser');
+            console.log(that.firebaseUser.email);
+          }
+          else {
+            console.log('article collection user logged out');
+          }
+
+        });
+
   }  //function ArticleCtrl
 
     angular
         .module('news')
-        .controller('ArticleCtrl', ['ArticleManager', ArticleCtrl]);
+        .controller('ArticleCtrl', ['ArticleManager', 'Authentication', ArticleCtrl]);
 })();

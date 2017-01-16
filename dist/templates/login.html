@@ -3,15 +3,13 @@
             <input id="txtEmail" type="email" placeholder="email@emailaddress.com" ng-model="login.email" />
             <input id="txtPassword" type="password" placeholder="password" ng-model="login.password" />
             <button id="btnLogin" class="add-collection-button" ng-click="login.signIn()">log in</button>
+            <button id="btnLogout" class="add-collection-button" ng-click="login.logOut()" ng-show="login.firebaseUser">log out</button>
 
             <div ng-show="login.firebaseUser">
-              <span>Hello, {{ login.firebaseUser.email }}</span>
-              <button id="btnLogout" class="add-collection-button" ng-click="login.logOut()">log out</button>
+              <div>Hello, {{ login.firebaseUser.email }}.</div>
             </div>
             <div ng-hide="login.firebaseUser">
-              <span>Welcome, please sign in.</span>
+              <span>Please sign in.</span>
             </div>
-            <button id="btnLoginStatus" class="add-collection-button" ng-click="login.getLoginStatus()">logged in?</button>
-
      </div>
 </section>

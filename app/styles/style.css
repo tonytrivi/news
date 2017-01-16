@@ -112,12 +112,23 @@ input {
     cursor: pointer; cursor: hand;
 }
 
+.article-collection-container {
+  font-family: 'Calibri', serif;
+  font-size: 0.8em;
+}
+
 .add-collection-button {
   font-family: 'Calibri', serif;
-  font-size: 0.7em;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
 }
 
 .summary-vote-button {
   font-family: 'Calibri', serif;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid #ccc;
   font-size: 0.7em;
 }
