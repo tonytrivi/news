@@ -2,9 +2,15 @@
     <div class="login-container">
             <input id="txtEmail" type="email" placeholder="email@emailaddress.com" ng-model="login.email" />
             <input id="txtPassword" type="password" placeholder="password" ng-model="login.password" />
-            <button id="btnLogin" class="add-collection-button" ng-click="login.logIn()">log in</button>
-            <button id="btnLogout" class="add-collection-button" ng-click="login.logOut()">log out</button>
-            <h1>logged in: {{ login.Authentication.loggedIn }}</h1>
+            <button id="btnLogin" class="add-collection-button" ng-click="login.signIn()">log in</button>
+
+            <div ng-show="login.firebaseUser">
+              <span>Hello, {{ login.firebaseUser.email }}</span>
+              <button id="btnLogout" class="add-collection-button" ng-click="login.logOut()">log out</button>
+            </div>
+            <div ng-hide="login.firebaseUser">
+              <span>Welcome, please sign in.</span>
+            </div>
             <button id="btnLoginStatus" class="add-collection-button" ng-click="login.getLoginStatus()">logged in?</button>
 
      </div>
