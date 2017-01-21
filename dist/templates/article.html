@@ -37,18 +37,17 @@
               </div>
             </div>
             <form ng-submit="article.addArticle(key, articleCollection)" ng-show="key == 0 && article.firebaseUser">
-              {{ article.firebaseUser.email }}
-              <label class="article-text-writer">title </label><input ng-model="article.title" type="text" />
+              <label class="article-text-writer">Title </label><input ng-model="article.title" type="text" />
               <label class="article-text-writer">URL </label><input ng-model="article.url" type="text" placeholder="http://www.amazon.com" />
-              <label class="article-text-writer">summary </label><input ng-model="article.summary" type="text" />
-              <label class="article-text-writer">writer </label><input ng-model="article.writer" type="text" />
-              <label class="article-text-writer">publication </label><select name="publications" ng-model="article.publication">
+              <label class="article-text-writer">Summary </label><input ng-model="article.summary" type="text" />
+              <label class="article-text-writer">Writer </label><input ng-model="article.writer" type="text" />
+              <label class="article-text-writer">Publication </label><select name="publications" ng-model="article.publication">
                 <option value="L.A. Times">L.A. Times</option>
                 <option value="New York Times">New York Times</option>
                 <option value="Wall Street Journal">Wall Street Journal</option>
               </select>
               <button type="button" class="add-collection-button" ng-click="article.addArticle(key, articleCollection)">
-                  add article
+                  Add Article
               </button>
             </form>
             <div class="article-collection-shim"></div>
