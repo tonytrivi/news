@@ -8,6 +8,7 @@ body {
 
 input {
   font-family: 'Roboto', sans-serif;
+  width: 130px;
 }
 
 .credit {
@@ -140,7 +141,7 @@ input {
   border-radius: 2px;
   background-color: #fff;
   border: 1px solid #ccc;
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 
 .login-container {

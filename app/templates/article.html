@@ -15,7 +15,7 @@
                     <a ng-show="false" class="article-details-link" href="http://localhost:3000/details/{{ story.ID }}" target="_blank">details...</a>
                     <br/>
                     <span class="article-text-summary">{{ story.summary }}</span>
-                    <button class="summary-vote-button" ng-click="article.toggleSummaries()">view summaries</button>
+                    <button class="summary-vote-button" ng-click="article.toggleSummaries()">View Summaries</button>
                     <div ng-repeat="summary in story.summaryList | orderBy:'-likes' track by $index"
                       class="summary-container"
                       ng-show="article.openSummaries">
@@ -23,8 +23,8 @@
                       <button type="button" class="add-collection-button" ng-click="article.incrementSummaryLike(summary.ID, articleCollection)">
                         <img class="img-like" src="../assets/images/thumbs-up-gray.svg"
                               alt="edit"
-                              height="10"
-                              width="15" />
+                              height="8"
+                              width="12" />
                       </button>
                 <!--      <button type="button" class="add-collection-button" ng-click="article.incrementSummaryLike()">
                           like

@@ -3,7 +3,7 @@
         this.ArticleManager = ArticleManager;
         this.Authentication = Authentication;
         this.allArticleCollections = ArticleManager.all;
-        this.articleCollectionLimit = 2;  //I had track by $index
+        this.articleCollectionLimit = 3;  //I had track by $index
         this.firebaseUser;
 
         this.title;
